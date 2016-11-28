@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroDetalleFactura));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ProductocomboBox = new System.Windows.Forms.ComboBox();
@@ -46,8 +47,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.NombretextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.IdClienteerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.NombreerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.IderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosdataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IdClienteerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NombreerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IderrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -134,6 +141,7 @@
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -231,6 +239,18 @@
             this.label2.TabIndex = 94;
             this.label2.Text = "Nombre";
             // 
+            // IdClienteerrorProvider
+            // 
+            this.IdClienteerrorProvider.ContainerControl = this;
+            // 
+            // NombreerrorProvider
+            // 
+            this.NombreerrorProvider.ContainerControl = this;
+            // 
+            // IderrorProvider
+            // 
+            this.IderrorProvider.ContainerControl = this;
+            // 
             // RegistroDetalleFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -256,6 +276,9 @@
             this.Load += new System.EventHandler(this.RegistroDetalleFactura_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProductosdataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IdClienteerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NombreerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IderrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,5 +303,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox NombretextBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider IdClienteerrorProvider;
+        private System.Windows.Forms.ErrorProvider NombreerrorProvider;
+        private System.Windows.Forms.ErrorProvider IderrorProvider;
     }
 }

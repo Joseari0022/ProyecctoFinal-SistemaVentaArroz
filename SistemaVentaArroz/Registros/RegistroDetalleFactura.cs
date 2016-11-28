@@ -24,12 +24,13 @@ namespace SistemaVentaArroz.Registros
         DetalleFacturas df = new DetalleFacturas();
         private void Idbutton_Click(object sender, EventArgs e)
         {
-            Pasar(DetalleFacturaBll.Buscar(u.String(IdtextBox.Text)));
+            if (validarId("Favor ingresar el id del detalle factura que desea buscar") && ValidarBuscar())
+                Pasar(DetalleFacturaBll.Buscar(u.StringToint(IdtextBox.Text)));
         }
 
         private void Pasar(DetalleFacturas df)
         {
-            var g = DetalleFacturaBll.Buscar(u.String(IdtextBox.Text));
+            var g = DetalleFacturaBll.Buscar(u.StringToint(IdtextBox.Text));
             IdtextBox.Text = df.FacturaId.ToString();
             IdClientetextBox.Text = df.ClienteId.ToString();
             ProductosdataGridView.DataSource = null;
@@ -38,7 +39,8 @@ namespace SistemaVentaArroz.Registros
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Pasar2(ClienteBLL.Buscar(u.String(IdClientetextBox.Text)));
+            if (validarId("Favor ingresar el id del cliente que desea buscar") && ValidarBuscar())
+                Pasar2(ClienteBLL.Buscar(u.StringToint(IdClientetextBox.Text)));
         }
 
         private void Pasar2(Clientes cli)
@@ -56,12 +58,22 @@ namespace SistemaVentaArroz.Registros
             LlenarClase(df);
             DetalleFacturaBll.Guardar(df);
             MessageBox.Show("Guardado con exito!!!");
+            
         }
 
         private void LlenarClase(DetalleFacturas dfl)
         {
             dfl.ClienteId = int.Parse(IdClientetextBox.Text);
             dfl.FechaVenta = FechaVentadateTimePicker.Value;
+        }
+
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+            if (validarId("Favor ingresar el id del empleado que desea eliminar") && ValidarBuscar())
+            {
+                DetalleFacturaBll.Eliminar(u.StringToint(IdtextBox.Text));
+                MessageBox.Show("Cliente Eliminado");
+            }
         }
 
         private void LlenarCombo()
@@ -88,6 +100,73 @@ namespace SistemaVentaArroz.Registros
             ProductosdataGridView.DataSource = df.Productos;
         }
 
-        
+        public bool ValidTex()
+        {
+            if (string.IsNullOrEmpty(NombretextBox.Text) && string.IsNullOrEmpty(IdClientetextBox.Text))
+            {
+                NombreerrorProvider.SetError(NombretextBox, "Ingrese el nombre");
+                IdClienteerrorProvider.SetError(IdClientetextBox, "Ingrese el id");
+                MessageBox.Show("Llenar los campos");
+            }
+            if (string.IsNullOrEmpty(NombretextBox.Text))
+            {
+                NombreerrorProvider.SetError(NombretextBox, "Ingrese el nombre");
+                return false;
+            }
+            if (string.IsNullOrEmpty(IdClientetextBox.Text))
+            {
+                NombreerrorProvider.Clear();
+                IdClienteerrorProvider.SetError(IdClientetextBox, "Ingrese su apellido");
+                return false;
+            }
+            return true;
+        }
+
+        private bool ValidarExistente(int aux)
+        {
+            if (DetalleFacturaBll.GetListaId(aux).Count() > 0)
+            {
+                MessageBox.Show("Este cliente existe....");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private bool validarId(string message)
+        {
+            if (string.IsNullOrEmpty(IdtextBox.Text))
+            {
+                IderrorProvider.SetError(IdtextBox, "Ingresar el ID");
+                MessageBox.Show(message);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private bool ValidarBuscar()
+        {
+            if (DetalleFacturaBll.Buscar(u.StringToint(IdtextBox.Text)) == null)
+            {
+                MessageBox.Show("Este registro no existe");
+                return false;
+            }
+            return true;
+        }
+
+        private bool ValidarBuscar2()
+        {
+            if (ClienteBLL.Buscar(u.StringToint(IdtextBox.Text)) == null)
+            {
+                MessageBox.Show("Este registro no existe");
+                return false;
+            }
+            return true;
+        }
     }
 }

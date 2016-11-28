@@ -94,5 +94,12 @@ namespace SistemaVentaArroz
             rdf.MdiParent = this;
             rdf.Show();
         }
+
+        private void detalleFacturaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.ConsultaDetalleFactura cdf = new Consultas.ConsultaDetalleFactura();
+            cdf.MdiParent = this;
+            cdf.Show();
+        }
     }
 }

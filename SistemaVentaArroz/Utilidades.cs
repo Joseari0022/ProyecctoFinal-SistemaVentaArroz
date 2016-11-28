@@ -7,7 +7,7 @@ namespace SistemaVentaArroz
 {
     public class Utilidades
     {
-        public int String(string texto)
+        public int StringToint(string texto)
         {
             int numero = 0;
             int.TryParse(texto, out numero);

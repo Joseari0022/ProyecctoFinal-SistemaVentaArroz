@@ -58,12 +58,14 @@
             this.CedulaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.splitter2 = new System.Windows.Forms.Splitter();
+            this.IderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.NombreerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ApellidoerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EdaderrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DireccionerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TelefonoerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CedulaerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IderrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label10
@@ -286,6 +288,10 @@
             this.splitter2.TabIndex = 102;
             this.splitter2.TabStop = false;
             // 
+            // IderrorProvider
+            // 
+            this.IderrorProvider.ContainerControl = this;
+            // 
             // RegistrosClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -324,6 +330,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DireccionerrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TelefonoerrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CedulaerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IderrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,5 +365,6 @@
         private System.Windows.Forms.ErrorProvider CedulaerrorProvider;
         private System.Windows.Forms.Splitter splitter2;
         private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.ErrorProvider IderrorProvider;
     }
 }

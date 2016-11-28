@@ -23,12 +23,14 @@ namespace SistemaVentaArroz.Registros
         Utilidades u = new Utilidades();
         private void Idbutton_Click(object sender, EventArgs e)
         {
-            LlenarUsuario(UsuarioBll.Buscar(u.String(IdtextBox.Text)));
+            if (validarId("Favor ingresar el id del usuario que desea buscar") && ValidarBuscar())
+                LlenarUsuario(UsuarioBll.Buscar(u.StringToint(IdtextBox.Text)));
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
-            LlenarUsuario(UsuarioBll.Buscar(u.String(IdtextBox.Text)));
+            if (validarId("Favor ingresar el id del usuario que desea buscar") && ValidarBuscar())
+                LlenarUsuario(UsuarioBll.Buscar(u.StringToint(IdtextBox.Text)));
         }
 
         private void LlenarUsuario(Usuarios usuario)
@@ -57,8 +59,11 @@ namespace SistemaVentaArroz.Registros
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            UsuarioBll.Eliminar(u.String(IdtextBox.Text));
-            MessageBox.Show("Usuario Eliminado");
+            if (validarId("Favor ingresar el id del usuario que desea eliminar") && ValidarBuscar())
+            {
+                UsuarioBll.Eliminar(u.StringToint(IdtextBox.Text));
+                MessageBox.Show("Usuario Eliminado");
+            }
         }
 
         public bool ValidTextB()
@@ -110,6 +115,40 @@ namespace SistemaVentaArroz.Registros
             {
                 return true;
             }
+        }
+
+        private bool validarId(string message)
+        {
+            if (string.IsNullOrEmpty(IdtextBox.Text))
+            {
+                IderrorProvider.SetError(IdtextBox, "Ingresar el ID");
+                MessageBox.Show(message);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private bool ValidarBuscar()
+        {
+            if (UsuarioBll.Buscar(u.StringToint(IdtextBox.Text)) == null)
+            {
+                MessageBox.Show("Este registro no existe");
+                return false;
+            }
+            return true;
+        }
+
+        private bool ValidarExiste(string aux)
+        {
+            if (UsuarioBll.GetListaNombreUsuario(aux).Count() > 0)
+            {
+                MessageBox.Show("Este nombre de Usuario ya existe, favor intentar con otro nombre de usario...");
+                return false;
+            }
+            return true;
         }
     }
 }

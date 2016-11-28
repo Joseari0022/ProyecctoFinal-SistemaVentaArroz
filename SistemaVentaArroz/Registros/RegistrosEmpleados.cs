@@ -21,9 +21,11 @@ namespace SistemaVentaArroz.Registros
         }
 
         Utilidades u = new Utilidades();
+
         private void Idbutton_Click(object sender, EventArgs e)
         {
-            LlenarEmpleado(EmpleadoBll.Buscar(u.String(IdtextBox.Text)));
+            if (validarId("Favor ingresar el id del usuario que desea buscar") && ValidarBuscar())
+                LlenarEmpleado(EmpleadoBll.Buscar(u.StringToint(IdtextBox.Text)));
         }
 
         public void LlenarClase(Empleados e)
@@ -58,15 +60,77 @@ namespace SistemaVentaArroz.Registros
         {
             Empleados empleado = new Empleados();
             LlenarClase(empleado);
-            EmpleadoBll.Guardar(empleado);
-            Clear();
-            MessageBox.Show("Guardado con exito!!!!");
+            if (ValidTex() && ValidarExistente(NombretextBox.Text))
+            {
+                EmpleadoBll.Guardar(empleado);
+                MessageBox.Show("Guardado con exito!!!!");
+            }
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            EmpleadoBll.Eliminar(u.String(IdtextBox.Text));
-            MessageBox.Show("Eliminado con exito!!!!");
+            if (validarId("Favor ingresar el id del empleado que desea eliminar") && ValidarBuscar())
+            {
+                EmpleadoBll.Eliminar(u.StringToint(IdtextBox.Text));
+                MessageBox.Show("Eliminado con exito!!!!");
+            }
+                
+        }
+
+        public bool ValidTex()
+        {
+            if (string.IsNullOrEmpty(NombretextBox.Text) && string.IsNullOrEmpty(DirecciontextBox.Text) && string.IsNullOrEmpty(TelefonotextBox.Text))
+            {
+                NombreerrorProvider.SetError(NombretextBox, "Ingrese el nombre");
+                ApellidoerrorProvider.SetError(ApellidotextBox, "Ingrese el apellido");
+                CedulaerrorProvider.SetError(CedulatextBox, "Ingrese la cedula");
+                DireccionerrorProvider.SetError(DirecciontextBox, "Ingrese la direccion");
+                errorProviderTelefono.SetError(TelefonotextBox, "Ingrese el telefono");
+                CargoerrorProvider.SetError(CargotextBox, "Ingrese el cargo");
+
+                MessageBox.Show("Llenar los campos");
+            }
+            if (string.IsNullOrEmpty(NombretextBox.Text))
+            {
+                NombreerrorProvider.SetError(NombretextBox, "Ingrese el nombre");
+                return false;
+            }
+            if (string.IsNullOrEmpty(ApellidotextBox.Text))
+            {
+                NombreerrorProvider.Clear();
+                ApellidoerrorProvider.SetError(ApellidotextBox, "Ingrese su apellido");
+                return false;
+            }
+            if (string.IsNullOrEmpty(CargotextBox.Text))
+            {
+                NombreerrorProvider.Clear();
+                ApellidoerrorProvider.Clear();
+                CargoerrorProvider.SetError(CargotextBox, "Ingrese el cargo");
+                return false;
+            }
+            if (string.IsNullOrEmpty(CedulatextBox.Text))
+            {
+                NombreerrorProvider.Clear();
+                ApellidoerrorProvider.Clear();
+                CargoerrorProvider.Clear();
+                CedulaerrorProvider.SetError(CedulatextBox, "Ingrese la cedula");
+            }
+            if (string.IsNullOrEmpty(DirecciontextBox.Text))
+            {
+                NombreerrorProvider.Clear();
+                ApellidoerrorProvider.Clear();
+                DireccionerrorProvider.SetError(DirecciontextBox, "Ingrese la direccion");
+                return false;
+            }
+            if (string.IsNullOrEmpty(TelefonotextBox.Text))
+            {
+                NombreerrorProvider.Clear();
+                ApellidoerrorProvider.Clear();
+                DireccionerrorProvider.Clear();
+                errorProviderTelefono.SetError(TelefonotextBox, "Ingrese el telefono");
+                return false;
+            }
+            return true;
         }
 
         private void Clear()
@@ -78,6 +142,43 @@ namespace SistemaVentaArroz.Registros
             DirecciontextBox.Clear();
             TelefonotextBox.Clear();
             CargotextBox.Clear();
+        }
+
+        private bool ValidarExistente(string aux)
+        {
+            if (EmpleadoBll.GetListaNombreEmpleado(aux).Count() > 0)
+            {
+                MessageBox.Show("Este empleado existe....");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private bool validarId(string message)
+        {
+            if (string.IsNullOrEmpty(IdtextBox.Text))
+            {
+                IderrorProvider.SetError(IdtextBox, "Ingresar el ID");
+                MessageBox.Show(message);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private bool ValidarBuscar()
+        {
+            if (EmpleadoBll.Buscar(u.StringToint(IdtextBox.Text)) == null)
+            {
+                MessageBox.Show("Este empleado no existe");
+                return false;
+            }
+            return true;
         }
     }
 }

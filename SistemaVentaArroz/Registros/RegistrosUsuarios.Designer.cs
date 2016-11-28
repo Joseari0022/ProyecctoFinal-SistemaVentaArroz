@@ -45,9 +45,11 @@
             this.NombreerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ContrasenaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ConfirmarContrasenaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.IderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.NombreerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContrasenaerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConfirmarContrasenaerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IderrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // Idbutton
@@ -180,6 +182,10 @@
             // 
             this.ConfirmarContrasenaerrorProvider.ContainerControl = this;
             // 
+            // IderrorProvider
+            // 
+            this.IderrorProvider.ContainerControl = this;
+            // 
             // RegistrosUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -203,6 +209,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.NombreerrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContrasenaerrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConfirmarContrasenaerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IderrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,5 +232,6 @@
         private System.Windows.Forms.ErrorProvider NombreerrorProvider;
         private System.Windows.Forms.ErrorProvider ContrasenaerrorProvider;
         private System.Windows.Forms.ErrorProvider ConfirmarContrasenaerrorProvider;
+        private System.Windows.Forms.ErrorProvider IderrorProvider;
     }
 }

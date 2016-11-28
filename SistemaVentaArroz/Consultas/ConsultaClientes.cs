@@ -33,7 +33,7 @@ namespace SistemaVentaArroz.Consultas
             {
                 if (!String.IsNullOrEmpty(FiltrotextBox.Text))
                 {
-                    lista = ClienteBLL.GetLista(U.String(FiltrotextBox.Text));
+                    lista = ClienteBLL.GetLista(U.StringToint(FiltrotextBox.Text));
                 }
                 else
                 {
@@ -210,7 +210,7 @@ namespace SistemaVentaArroz.Consultas
                 MessageBox.Show("No existe registro con este campo de filtro intertar con otro por favor");
                 return false;
             }
-            if (FiltrarcomboBox.SelectedIndex == 0 && ClienteBLL.GetLista(U.String(FiltrotextBox.Text)).Count == 0)
+            if (FiltrarcomboBox.SelectedIndex == 0 && ClienteBLL.GetLista(U.StringToint(FiltrotextBox.Text)).Count == 0)
             {
                 MessageBox.Show("No existe registro con este campo de filtro intertar con otro por favor");
                 return false;

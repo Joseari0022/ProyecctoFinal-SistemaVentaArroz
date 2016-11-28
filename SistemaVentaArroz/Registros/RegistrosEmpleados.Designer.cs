@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrosEmpleados));
             this.CargotextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,6 +50,20 @@
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
+            this.NombreerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ApellidoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CedulaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.DireccionerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderTelefono = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CargoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.IderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.NombreerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ApellidoerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CedulaerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DireccionerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTelefono)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CargoerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IderrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // CargotextBox
@@ -235,6 +250,34 @@
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
+            // NombreerrorProvider
+            // 
+            this.NombreerrorProvider.ContainerControl = this;
+            // 
+            // ApellidoerrorProvider
+            // 
+            this.ApellidoerrorProvider.ContainerControl = this;
+            // 
+            // CedulaerrorProvider
+            // 
+            this.CedulaerrorProvider.ContainerControl = this;
+            // 
+            // DireccionerrorProvider
+            // 
+            this.DireccionerrorProvider.ContainerControl = this;
+            // 
+            // errorProviderTelefono
+            // 
+            this.errorProviderTelefono.ContainerControl = this;
+            // 
+            // CargoerrorProvider
+            // 
+            this.CargoerrorProvider.ContainerControl = this;
+            // 
+            // IderrorProvider
+            // 
+            this.IderrorProvider.ContainerControl = this;
+            // 
             // RegistrosEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -263,6 +306,13 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistrosEmpleados";
             this.Text = "RegistrosEmpleados";
+            ((System.ComponentModel.ISupportInitialize)(this.NombreerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ApellidoerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CedulaerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DireccionerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTelefono)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CargoerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IderrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,5 +340,12 @@
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Guardarbutton;
+        private System.Windows.Forms.ErrorProvider NombreerrorProvider;
+        private System.Windows.Forms.ErrorProvider ApellidoerrorProvider;
+        private System.Windows.Forms.ErrorProvider CedulaerrorProvider;
+        private System.Windows.Forms.ErrorProvider DireccionerrorProvider;
+        private System.Windows.Forms.ErrorProvider errorProviderTelefono;
+        private System.Windows.Forms.ErrorProvider CargoerrorProvider;
+        private System.Windows.Forms.ErrorProvider IderrorProvider;
     }
 }

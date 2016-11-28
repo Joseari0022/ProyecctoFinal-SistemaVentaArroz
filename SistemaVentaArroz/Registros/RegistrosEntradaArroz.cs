@@ -24,7 +24,8 @@ namespace SistemaVentaArroz.Registros
 
         private void IdBuscarbutton_Click(object sender, EventArgs e)
         {
-            Llenarentrada(EntradaArrozBll.Buscar(u.String(IdtextBox.Text)));
+            if (validarId("Favor ingresar el id del usuario que desea buscar") && ValidarBuscar())
+                Llenarentrada(EntradaArrozBll.Buscar(u.StringToint(IdtextBox.Text)));
         }
 
         private void Llenarentrada(EntradasArroz ea)
@@ -42,7 +43,8 @@ namespace SistemaVentaArroz.Registros
 
         private void IdClientebutton_Click(object sender, EventArgs e)
         {
-            LlenarClase2(ClienteBLL.Buscar(u.String(IdClientetextBox.Text)));
+            if (validarId("Favor ingresar el id del cliente que desea buscar") && ValidarBuscar2())
+                LlenarClase2(ClienteBLL.Buscar(u.StringToint(IdClientetextBox.Text)));
         }
 
         private void LlenarClase2(Clientes cli)
@@ -52,7 +54,8 @@ namespace SistemaVentaArroz.Registros
 
         private void IdGuardaAlmacenbutton_Click(object sender, EventArgs e)
         {
-            LlenarClase3(EmpleadoBll.Buscar(u.String(IdGuardaAlmacentextBox.Text)));
+            if (validarId("Favor ingresar el id del empleado que desea buscar") && ValidarBuscar3())
+                LlenarClase3(EmpleadoBll.Buscar(u.StringToint(IdGuardaAlmacentextBox.Text)));
         }
 
         private void LlenarClase3(Empleados empl)
@@ -101,8 +104,120 @@ namespace SistemaVentaArroz.Registros
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            EntradaArrozBll.Eliminar(u.String(IdtextBox.Text));
-            MessageBox.Show("Eliminado con exito!!!!");
+            if (validarId("Favor ingresar el id del cliente que desea eliminar") && ValidarBuscar())
+            {
+                EntradaArrozBll.Eliminar(u.StringToint(IdtextBox.Text));
+                MessageBox.Show("Eliminado con exito!!!!");
+            }
         }
+
+        public bool ValidTextB()
+        {
+            if (string.IsNullOrEmpty(NombreClientetextBox.Text) && string.IsNullOrEmpty(CantidadtextBox.Text) && string.IsNullOrEmpty(HumedadtextBox.Text))
+            {
+                NombreClienteerrorProvider.SetError(NombreClientetextBox, "Ingrese el nombre");
+                CantidaderrorProvider.SetError(CantidadtextBox, "Ingrese cantidad");
+                PrecioerrorProvider.SetError(PreciotextBox, "Ingrese el precio");
+                HumedaderrorProvider.SetError(HumedadtextBox, "Ingrese la humedad");
+                MessageBox.Show("Llenar todos los campos");
+            }
+            if (string.IsNullOrEmpty(NombreClientetextBox.Text))
+            {
+                NombreClienteerrorProvider.SetError(NombreClientetextBox, "Ingrese el nombre");
+                return false;
+            }
+            if (string.IsNullOrEmpty(CantidadtextBox.Text))
+            {
+                NombreClienteerrorProvider.Clear();
+                CantidaderrorProvider.SetError(CantidadtextBox, "Ingrese cantidad");
+                return false;
+            }
+            if (string.IsNullOrEmpty(PreciotextBox.Text))
+            {
+                NombreClienteerrorProvider.Clear();
+                CantidaderrorProvider.Clear();
+                PrecioerrorProvider.SetError(PreciotextBox, "ingrese el precio");
+                return false;
+            }
+            if (string.IsNullOrEmpty(HumedadtextBox.Text))
+            {
+                NombreClienteerrorProvider.Clear();
+                CantidaderrorProvider.Clear();
+                PrecioerrorProvider.Clear();
+                HumedaderrorProvider.SetError(HumedadtextBox, "Ingrese la humeda");
+                return false;
+            }
+            if (string.IsNullOrEmpty(HumedadtextBox.Text))
+            {
+                NombreClienteerrorProvider.Clear();
+                CantidaderrorProvider.Clear();
+                PrecioerrorProvider.Clear();
+                HumedaderrorProvider.Clear()
+;                NombreAutorizadaerrorProvider.SetError(NombreGuardaAlmacentextBox, "Ingrese el empleado");
+                return false;
+            }
+            return true;
+        }
+
+        private bool ValidarExistente(string aux)
+        {
+            if (UsuarioBll.GetListaNombreUsuario(aux).Count() > 0)
+            {
+                MessageBox.Show("Este usuario existe....");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private bool validarId(string message)
+        {
+            if (string.IsNullOrEmpty(IdtextBox.Text))
+            {
+                IderrorProvider.SetError(IdtextBox, "Ingresar el ID");
+                MessageBox.Show(message);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private bool ValidarBuscar()
+        {
+            if (EmpleadoBll.Buscar(u.StringToint(IdtextBox.Text)) == null)
+            {
+                MessageBox.Show("Este registro no existe");
+                return false;
+            }
+            return true;
+        }
+
+        private bool ValidarBuscar2()
+        {
+            if (ClienteBLL.Buscar(u.StringToint(IdtextBox.Text)) == null)
+            {
+                MessageBox.Show("Este registro no existe");
+                return false;
+            }
+            return true;
+        }
+
+        private bool ValidarBuscar3()
+        {
+            if (ClienteBLL.Buscar(u.StringToint(IdtextBox.Text)) == null)
+            {
+                MessageBox.Show("Este registro no existe");
+                return false;
+            }
+            return true;
+        }
+
+        
+
+
     }
 }

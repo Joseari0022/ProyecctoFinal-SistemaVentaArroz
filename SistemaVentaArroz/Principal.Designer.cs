@@ -35,13 +35,14 @@
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entradaArrozToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.detalleFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.entradaArrozToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.detalleFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.detalleFacturaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,6 +106,13 @@
             this.productosToolStripMenuItem.Text = "Productos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
             // 
+            // detalleFacturaToolStripMenuItem
+            // 
+            this.detalleFacturaToolStripMenuItem.Name = "detalleFacturaToolStripMenuItem";
+            this.detalleFacturaToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
+            this.detalleFacturaToolStripMenuItem.Text = "Detalle Factura";
+            this.detalleFacturaToolStripMenuItem.Click += new System.EventHandler(this.detalleFacturaToolStripMenuItem_Click);
+            // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -112,7 +120,8 @@
             this.clientesToolStripMenuItem,
             this.empleadosToolStripMenuItem1,
             this.entradaArrozToolStripMenuItem1,
-            this.productosToolStripMenuItem1});
+            this.productosToolStripMenuItem1,
+            this.detalleFacturaToolStripMenuItem1});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -120,44 +129,44 @@
             // usuariosToolStripMenuItem1
             // 
             this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
-            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(175, 26);
+            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(183, 26);
             this.usuariosToolStripMenuItem1.Text = "Usuarios";
             this.usuariosToolStripMenuItem1.Click += new System.EventHandler(this.usuariosToolStripMenuItem1_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // empleadosToolStripMenuItem1
             // 
             this.empleadosToolStripMenuItem1.Name = "empleadosToolStripMenuItem1";
-            this.empleadosToolStripMenuItem1.Size = new System.Drawing.Size(175, 26);
+            this.empleadosToolStripMenuItem1.Size = new System.Drawing.Size(183, 26);
             this.empleadosToolStripMenuItem1.Text = "Empleados";
             this.empleadosToolStripMenuItem1.Click += new System.EventHandler(this.empleadosToolStripMenuItem1_Click);
             // 
             // entradaArrozToolStripMenuItem1
             // 
             this.entradaArrozToolStripMenuItem1.Name = "entradaArrozToolStripMenuItem1";
-            this.entradaArrozToolStripMenuItem1.Size = new System.Drawing.Size(175, 26);
+            this.entradaArrozToolStripMenuItem1.Size = new System.Drawing.Size(183, 26);
             this.entradaArrozToolStripMenuItem1.Text = "Entrada Arroz";
             this.entradaArrozToolStripMenuItem1.Click += new System.EventHandler(this.entradaArrozToolStripMenuItem1_Click);
             // 
             // productosToolStripMenuItem1
             // 
             this.productosToolStripMenuItem1.Name = "productosToolStripMenuItem1";
-            this.productosToolStripMenuItem1.Size = new System.Drawing.Size(175, 26);
+            this.productosToolStripMenuItem1.Size = new System.Drawing.Size(183, 26);
             this.productosToolStripMenuItem1.Text = "Productos";
             this.productosToolStripMenuItem1.Click += new System.EventHandler(this.productosToolStripMenuItem1_Click);
             // 
-            // detalleFacturaToolStripMenuItem
+            // detalleFacturaToolStripMenuItem1
             // 
-            this.detalleFacturaToolStripMenuItem.Name = "detalleFacturaToolStripMenuItem";
-            this.detalleFacturaToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
-            this.detalleFacturaToolStripMenuItem.Text = "Detalle Factura";
-            this.detalleFacturaToolStripMenuItem.Click += new System.EventHandler(this.detalleFacturaToolStripMenuItem_Click);
+            this.detalleFacturaToolStripMenuItem1.Name = "detalleFacturaToolStripMenuItem1";
+            this.detalleFacturaToolStripMenuItem1.Size = new System.Drawing.Size(183, 26);
+            this.detalleFacturaToolStripMenuItem1.Text = "Detalle Factura";
+            this.detalleFacturaToolStripMenuItem1.Click += new System.EventHandler(this.detalleFacturaToolStripMenuItem1_Click);
             // 
             // Principal
             // 
@@ -194,6 +203,7 @@
         private System.Windows.Forms.ToolStripMenuItem entradaArrozToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem detalleFacturaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem detalleFacturaToolStripMenuItem1;
     }
 }
 

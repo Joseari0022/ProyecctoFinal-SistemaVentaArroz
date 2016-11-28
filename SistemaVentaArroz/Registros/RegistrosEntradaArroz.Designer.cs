@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrosEntradaArroz));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,8 +60,22 @@
             this.CantidadtextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TipoArrozcomboBox = new System.Windows.Forms.ComboBox();
+            this.NombreClienteerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CantidaderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.PrecioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.HumedaderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.NombreAutorizadaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.IderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NombreClienteerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidaderrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrecioerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HumedaderrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NombreAutorizadaerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IderrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -359,6 +374,34 @@
             this.TipoArrozcomboBox.Size = new System.Drawing.Size(173, 24);
             this.TipoArrozcomboBox.TabIndex = 104;
             // 
+            // NombreClienteerrorProvider
+            // 
+            this.NombreClienteerrorProvider.ContainerControl = this;
+            // 
+            // CantidaderrorProvider
+            // 
+            this.CantidaderrorProvider.ContainerControl = this;
+            // 
+            // PrecioerrorProvider
+            // 
+            this.PrecioerrorProvider.ContainerControl = this;
+            // 
+            // HumedaderrorProvider
+            // 
+            this.HumedaderrorProvider.ContainerControl = this;
+            // 
+            // NombreAutorizadaerrorProvider
+            // 
+            this.NombreAutorizadaerrorProvider.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // IderrorProvider
+            // 
+            this.IderrorProvider.ContainerControl = this;
+            // 
             // RegistrosEntradaArroz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -389,6 +432,13 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NombreClienteerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidaderrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrecioerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HumedaderrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NombreAutorizadaerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IderrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,5 +476,12 @@
         private System.Windows.Forms.ComboBox TipoArrozcomboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox CargotextBox;
+        private System.Windows.Forms.ErrorProvider NombreClienteerrorProvider;
+        private System.Windows.Forms.ErrorProvider CantidaderrorProvider;
+        private System.Windows.Forms.ErrorProvider PrecioerrorProvider;
+        private System.Windows.Forms.ErrorProvider HumedaderrorProvider;
+        private System.Windows.Forms.ErrorProvider NombreAutorizadaerrorProvider;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider IderrorProvider;
     }
 }

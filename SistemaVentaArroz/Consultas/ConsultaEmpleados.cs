@@ -32,7 +32,7 @@ namespace SistemaVentaArroz.Consultas
             {
                 if (!String.IsNullOrEmpty(FiltrotextBox.Text))
                 {
-                    lista = EmpleadoBll.GetListaId(u.String(FiltrotextBox.Text));
+                    lista = EmpleadoBll.GetListaId(u.StringToint(FiltrotextBox.Text));
                 }
                 else
                 {

@@ -71,7 +71,7 @@ namespace BLL
 
         }
 
-        public static Clientes Buscar(int Id)
+        public static Clientes Buscar(Int32 Id)
         {
             try
             {

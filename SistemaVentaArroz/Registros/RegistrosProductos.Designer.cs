@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrosProductos));
             this.FechaDateTimePicke = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,7 +47,17 @@
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.FacturadataGridView = new System.Windows.Forms.DataGridView();
+            this.IderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.NombreerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.DescripcionerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CantidaderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.PrecioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.FacturadataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IderrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NombreerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DescripcionerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidaderrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrecioerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // FechaDateTimePicke
@@ -211,6 +222,26 @@
             this.FacturadataGridView.Size = new System.Drawing.Size(618, 209);
             this.FacturadataGridView.TabIndex = 133;
             // 
+            // IderrorProvider
+            // 
+            this.IderrorProvider.ContainerControl = this;
+            // 
+            // NombreerrorProvider
+            // 
+            this.NombreerrorProvider.ContainerControl = this;
+            // 
+            // DescripcionerrorProvider
+            // 
+            this.DescripcionerrorProvider.ContainerControl = this;
+            // 
+            // CantidaderrorProvider
+            // 
+            this.CantidaderrorProvider.ContainerControl = this;
+            // 
+            // PrecioerrorProvider
+            // 
+            this.PrecioerrorProvider.ContainerControl = this;
+            // 
             // RegistrosProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -237,6 +268,11 @@
             this.Name = "RegistrosProductos";
             this.Text = "RegistrosProductos";
             ((System.ComponentModel.ISupportInitialize)(this.FacturadataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IderrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NombreerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DescripcionerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidaderrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrecioerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,5 +297,10 @@
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.DataGridView FacturadataGridView;
+        private System.Windows.Forms.ErrorProvider IderrorProvider;
+        private System.Windows.Forms.ErrorProvider NombreerrorProvider;
+        private System.Windows.Forms.ErrorProvider DescripcionerrorProvider;
+        private System.Windows.Forms.ErrorProvider CantidaderrorProvider;
+        private System.Windows.Forms.ErrorProvider PrecioerrorProvider;
     }
 }

@@ -11,7 +11,7 @@ namespace BLL
     public class DetalleFacturaBll
     {
         DetalleFacturas factura = new DetalleFacturas();
-        public static void Guardar(DetalleFacturas f)
+        public static bool Guardar(DetalleFacturas f)
         {
             try
             {
@@ -24,36 +24,71 @@ namespace BLL
                 }
                 db.DetalleFacturas.Add(f);
                 db.SaveChanges();
+                return false;
                 db.Dispose();
             }
             catch (Exception e)
             {
+                return true;
                 throw e;
             }
         }
 
-        public static void Eliminar(DetalleFacturas f)
+        public static void Eliminar(int id)
         {
-            SistemaArrozDb db = new SistemaArrozDb();
-            DetalleFacturas fa = db.DetalleFacturas.Find(f);
-            db.DetalleFacturas.Remove(fa);
-            db.SaveChanges();
+            using (var db = new SistemaArrozDb())
+            {
+                var prd = (from d in db.Productos
+                               where id == d.ProductoId
+                               select d).FirstOrDefault();
+                db.Productos.Remove(prd);
+
+                var Detalle = (from d in db.DetalleFacturas
+                               where id == d.FacturaId
+                               select d).FirstOrDefault();
+                db.DetalleFacturas.Remove(Detalle);
+                db.SaveChanges();
+            }
         }
 
-        public static void Eliminar(int v)
-        {
-            SistemaArrozDb db = new SistemaArrozDb();
-            DetalleFacturas fa = db.DetalleFacturas.Find(v);
+        //public static void Eliminar(int v)
+        //{
+        //    SistemaArrozDb db = new SistemaArrozDb();
+        //    DetalleFacturas fa = db.DetalleFacturas.Find(v);
 
 
-            db.DetalleFacturas.Remove(fa);
-            db.SaveChanges();
-        }
+        //    db.DetalleFacturas.Remove(fa);
+        //    db.SaveChanges();
+        //}
 
         public static DetalleFacturas Buscar(int Id)
         {
             SistemaArrozDb db = new SistemaArrozDb();
             return db.DetalleFacturas.Find(Id);
+        }
+
+        public static List<DetalleFacturas> GetLista()
+        {
+            List<DetalleFacturas> lista = new List<DetalleFacturas>();
+            SistemaArrozDb db = new SistemaArrozDb();
+            lista = db.DetalleFacturas.ToList();
+            return lista;
+        }
+
+        public static List<DetalleFacturas> GetListaId(int facturaId)
+        {
+            List<DetalleFacturas> lista = new List<DetalleFacturas>();
+            SistemaArrozDb db = new SistemaArrozDb();
+            lista = db.DetalleFacturas.Where(p => p.FacturaId == facturaId).ToList();
+            return lista;
+        }
+
+        public static List<DetalleFacturas> GetListaIdCliente(int clienteid)
+        {
+            List<DetalleFacturas> lista = new List<DetalleFacturas>();
+            SistemaArrozDb db = new SistemaArrozDb();
+            lista = db.DetalleFacturas.Where(p => p.ClienteId == clienteid).ToList();
+            return lista;
         }
     }
 }
