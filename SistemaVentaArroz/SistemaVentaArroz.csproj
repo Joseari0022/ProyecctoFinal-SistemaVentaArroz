@@ -266,6 +266,9 @@
     <EmbeddedResource Include="Consultas\RportingViewerEntradasArroz.resx">
       <DependentUpon>RportingViewerEntradasArroz.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Factura.resx">
+      <DependentUpon>Factura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Iniciar Sesion.resx">
       <DependentUpon>Iniciar Sesion.cs</DependentUpon>
     </EmbeddedResource>
