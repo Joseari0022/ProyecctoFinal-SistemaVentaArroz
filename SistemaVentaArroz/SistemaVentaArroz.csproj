@@ -79,6 +79,12 @@
     <Compile Include="Consultas\ConsultaClientes.Designer.cs">
       <DependentUpon>ConsultaClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\ConsultaDetalleFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaDetalleFactura.Designer.cs">
+      <DependentUpon>ConsultaDetalleFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\ConsultaEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,12 @@
     </Compile>
     <Compile Include="Consultas\ReportingViewerClientes.Designer.cs">
       <DependentUpon>ReportingViewerClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ReportingViewerDetalleFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ReportingViewerDetalleFactura.Designer.cs">
+      <DependentUpon>ReportingViewerDetalleFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="Consultas\ReportingViewerEmpleados.cs">
       <SubType>Form</SubType>
@@ -215,6 +227,9 @@
     <EmbeddedResource Include="Consultas\ConsultaClientes.resx">
       <DependentUpon>ConsultaClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ConsultaDetalleFactura.resx">
+      <DependentUpon>ConsultaDetalleFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\ConsultaEmpleados.resx">
       <DependentUpon>ConsultaEmpleados.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\ReportingViewerClientes.resx">
       <DependentUpon>ReportingViewerClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ReportingViewerDetalleFactura.resx">
+      <DependentUpon>ReportingViewerDetalleFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\ReportingViewerEmpleados.resx">
       <DependentUpon>ReportingViewerEmpleados.cs</DependentUpon>
