@@ -133,6 +133,12 @@
     <Compile Include="Consultas\RportingViewerEntradasArroz.Designer.cs">
       <DependentUpon>RportingViewerEntradasArroz.cs</DependentUpon>
     </Compile>
+    <Compile Include="Iniciar Sesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Iniciar Sesion.Designer.cs">
+      <DependentUpon>Iniciar Sesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\RportingViewerEntradasArroz.resx">
       <DependentUpon>RportingViewerEntradasArroz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Iniciar Sesion.resx">
+      <DependentUpon>Iniciar Sesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
