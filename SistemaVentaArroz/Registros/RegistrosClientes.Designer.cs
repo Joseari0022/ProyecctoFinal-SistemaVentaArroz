@@ -56,8 +56,6 @@
             this.DireccionerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.TelefonoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.CedulaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.splitter1 = new System.Windows.Forms.Splitter();
-            this.splitter2 = new System.Windows.Forms.Splitter();
             this.IderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.NombreerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ApellidoerrorProvider)).BeginInit();
@@ -272,22 +270,6 @@
             // 
             this.CedulaerrorProvider.ContainerControl = this;
             // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 370);
-            this.splitter1.TabIndex = 101;
-            this.splitter1.TabStop = false;
-            // 
-            // splitter2
-            // 
-            this.splitter2.Location = new System.Drawing.Point(3, 0);
-            this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(3, 370);
-            this.splitter2.TabIndex = 102;
-            this.splitter2.TabStop = false;
-            // 
             // IderrorProvider
             // 
             this.IderrorProvider.ContainerControl = this;
@@ -297,10 +279,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(543, 370);
-            this.Controls.Add(this.splitter2);
-            this.Controls.Add(this.splitter1);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
@@ -363,8 +342,6 @@
         private System.Windows.Forms.ErrorProvider DireccionerrorProvider;
         private System.Windows.Forms.ErrorProvider TelefonoerrorProvider;
         private System.Windows.Forms.ErrorProvider CedulaerrorProvider;
-        private System.Windows.Forms.Splitter splitter2;
-        private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.ErrorProvider IderrorProvider;
     }
 }

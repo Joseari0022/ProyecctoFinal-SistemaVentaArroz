@@ -101,5 +101,10 @@ namespace SistemaVentaArroz
             cdf.MdiParent = this;
             cdf.Show();
         }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
